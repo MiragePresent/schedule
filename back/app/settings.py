@@ -30,6 +30,7 @@ class Common(Configuration):
     # Application definition
     INSTALLED_APPS = [
         'rest_framework',
+        'corsheaders',
         'tasks',
         'django.contrib.admin',
         'django.contrib.auth',
@@ -54,6 +55,7 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'corsheaders.middleware.CorsMiddleware',
     ]
 
     ROOT_URLCONF = APP_DIR + '.urls'
@@ -126,6 +128,8 @@ class Common(Configuration):
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     AUTH_USER_MODEL = 'users.User'
+
+    CORS_ORIGIN_ALLOW_ALL = True
 
 
 class Development(Common):

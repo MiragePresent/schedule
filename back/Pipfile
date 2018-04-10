@@ -17,6 +17,7 @@ gunicorn = "==19.7.1"
 newrelic = "==2.98.0.81"
 whitenoise = "==4.0b4"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.6"

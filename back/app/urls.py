@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('tasks', include('tasks.urls')),
+    path('api/tasks', include('tasks.urls')),
 ]
 
 if settings.DEBUG:
