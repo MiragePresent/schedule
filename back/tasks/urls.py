@@ -1,7 +1,7 @@
 from django.urls import path
-from . import rest
+from . import views
 
 urlpatterns = [
-    path('', rest.Task.fetchOrCreate),
-    path('/<int:taks_id>', rest.Task.action)
+    path('', views.task_list),
+    path('/<int:task_id>/', views.task_detail),
 ]
