@@ -29,6 +29,8 @@ class Common(Configuration):
 
     # Application definition
     INSTALLED_APPS = [
+        'rest_framework',
+        'tasks',
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
@@ -55,6 +57,14 @@ class Common(Configuration):
     ]
 
     ROOT_URLCONF = APP_DIR + '.urls'
+
+    REST_FRAMEWORK = {
+        # Use Django's standard `django.contrib.auth` permissions,
+        # or allow read-only access for unauthenticated users.
+        'DEFAULT_PERMISSION_CLASSES': [
+            'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        ]
+    }
 
     TEMPLATES = [
         {
