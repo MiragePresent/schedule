@@ -4,14 +4,19 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from tasks.models import Task
 from tasks.serializers import TaskSerializer
+from datetime import datetime
 
 @csrf_exempt
 def task_list(request):
     """
-    List all code tasks, or create a new task.
+    List all code tasks, or create a new task by day
     """
     if request.method == 'GET':
-        tasks = Task.objects.all()
+        day = datetime.now().strftime("%Y-%m-%d")
+        if (day in request.GET):
+            day = request.GET['day']
+
+        tasks = Task.objects.filter(day='2018-04-11')
         serializer = TaskSerializer(tasks, many=True)
         return JsonResponse(serializer.data, safe=False)
 

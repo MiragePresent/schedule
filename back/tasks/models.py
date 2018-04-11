@@ -4,12 +4,14 @@ from datetime import datetime
 class Task(models.Model):
 
     WAIT = 1
-    DONE = 2
-    PARTIALLY_DONE = 3
-    SKIPPED = 4
+    IN_PROGRESS = 2
+    DONE = 3
+    PARTIALLY_DONE = 4
+    SKIPPED = 5
 
     STATUSES = (
         (WAIT, 'Wait'),
+        (IN_PROGRESS, 'In progress'),
         (DONE, 'Done'),
         (PARTIALLY_DONE, 'Partially done'),
         (SKIPPED, 'Skipped'),

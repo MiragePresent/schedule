@@ -6,8 +6,8 @@ class TaskSerializer(serializers.Serializer):
     title = serializers.CharField(required=True, max_length=300)
     description = serializers.CharField(required=False, allow_blank=True, max_length=1000)
     day = serializers.DateField()
-    from_time = serializers.DateTimeField()
-    to_time = serializers.DateTimeField()
+    from_time = serializers.DateTimeField(format="%H:%M")
+    to_time = serializers.DateTimeField(format="%H:%M")
     status = serializers.CharField(max_length=1, required=False)
 
 
