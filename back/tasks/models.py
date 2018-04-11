@@ -25,7 +25,10 @@ class Task(models.Model):
     to_time = models.DateTimeField(null=True, blank=True)
     status = models.CharField(max_length=1, choices=STATUSES, default=WAIT)
 
+    def __str__(self):
+        return self.title
+
 class TaskActivity(models.Model):
-    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, related_name="activity", on_delete=models.CASCADE)
     started_at = models.DateTimeField(default=datetime.now())
     stopped_at = models.DateTimeField(null=True, blank=True)

@@ -1,5 +1,16 @@
 from rest_framework import serializers
 from tasks.models import Task
+from tasks.models import TaskActivity
+
+class TaskActivitySerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    task_id = serializers.IntegerField()
+    started_at = serializers.DateTimeField(format="%H:%M")
+    stopped_at = serializers.DateTimeField(format="%H:%M")
+
+    class Meta:
+        model = TaskActivity
+        fields = ('id', 'task_id', 'started_at', 'stopped_at')
 
 class TaskSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
@@ -9,6 +20,7 @@ class TaskSerializer(serializers.Serializer):
     from_time = serializers.DateTimeField(format="%H:%M")
     to_time = serializers.DateTimeField(format="%H:%M")
     status = serializers.CharField(max_length=1, required=False)
+    activity = TaskActivitySerializer(many=True, read_only=True)
 
 
     def create(self, validated_data):
@@ -29,3 +41,6 @@ class TaskSerializer(serializers.Serializer):
         instance.status = validated_data.get('status', instance.status)
         instance.save()
         return instance
+
+    class Meta:
+        fields = ('taskactivity_set')
