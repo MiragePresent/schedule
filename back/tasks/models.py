@@ -3,8 +3,8 @@ from datetime import datetime
 
 class Task(models.Model):
 
-    WAIT = 1
-    DONE = 3
+    WAIT = 0
+    DONE = 1
 
     STATUSES = (
         (WAIT, 'Wait'),
@@ -13,7 +13,6 @@ class Task(models.Model):
 
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length = 300)
-    day = models.DateField()
     status = models.CharField(max_length=1, choices=STATUSES, default=WAIT)
 
     def __str__(self):

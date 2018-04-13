@@ -129,7 +129,36 @@ class Common(Configuration):
 
     AUTH_USER_MODEL = 'users.User'
 
+    """
+    CORS is configured just for local usage
+    """
     CORS_ORIGIN_ALLOW_ALL = True
+
+    CORS_ALLOW_METHODS = (
+        'DELETE',
+        'GET',
+        'OPTIONS',
+        'PATCH',
+        'POST',
+        'PUT',
+    )
+    CORS_ALLOW_HEADERS = (
+        'accept',
+        'accept-encoding',
+        'authorization',
+        'content-type',
+        'dnt',
+        'origin',
+        'user-agent',
+        'x-csrftoken',
+        'x-requested-with',
+        'Access-Control-Allow-Origin',
+    )
+    REST_FRAMEWORK = {
+       'DEFAULT_AUTHENTICATION_CLASSES': (
+           'rest_framework.authentication.TokenAuthentication',
+       ),
+    }
 
 
 class Development(Common):
