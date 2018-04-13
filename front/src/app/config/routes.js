@@ -1,8 +1,8 @@
-import Home from 'app/screens/Home'
+import Shedule from 'app/screens/Schedule'
 import NotFound from 'app/screens/NotFound'
 
 const routes = [
-  Home,
+  Shedule,
   NotFound
 ]
 

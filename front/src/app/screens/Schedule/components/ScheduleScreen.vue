@@ -1,16 +1,16 @@
 <template>
   <div>
-    <h1>HomeScreen</h1>
-    <welcome></welcome>
+    <tasks-list></tasks-list>
   </div>
 </template>
 
 <script>
-  import Welcome from './Welcome.vue'
+  import TasksList from './TasksList.vue'
   export default {
-    name: 'HomeScreen',
+    name: 'ScheduleScreen',
+    props: ['day'],
     components: {
-      Welcome
+      TasksList
     }
   }
 </script>
