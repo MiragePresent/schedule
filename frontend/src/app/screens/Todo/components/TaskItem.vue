@@ -105,7 +105,7 @@ export default {
       // Don't send form
       event.preventDefault();
       // Data for updating
-      let data = { title: this.title };
+      let data = { title: this.title, date: this.task.date };
       // if task is already save in DB it has numeric ID
       if (parseInt(this.task.id) == this.task.id) {
         this.updateTask({ task_id: this.task.id, data });
