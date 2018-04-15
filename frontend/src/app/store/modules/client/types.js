@@ -1,0 +1,1 @@
+export const SET_CLIENT_HEIGHT = 'SET_CLIENT_HEIGHT';
