@@ -14,6 +14,7 @@ class Task(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length = 300)
     status = models.CharField(max_length=1, choices=STATUSES, default=WAIT)
+    date = models.DateField(default=datetime.now());
 
     def __str__(self):
         return self.title
