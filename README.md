@@ -1,6 +1,6 @@
 It's simple TODO List built on **Django REST Framework** and **Vue.j**
 
-![Simple TODO list](https://github.com/MiragePresent/todo/blob/master/TODO.png?raw=true)
+![Simple TODO list](https://github.com/MiragePresent/todo/blob/dev/TODO.png?raw=true)
 
 ## Instalation
 
