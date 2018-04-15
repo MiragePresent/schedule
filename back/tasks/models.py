@@ -15,6 +15,10 @@ class Task(models.Model):
     title = models.CharField(max_length = 300)
     status = models.CharField(max_length=1, choices=STATUSES, default=WAIT)
     date = models.DateField(default=datetime.now());
+    created_at = models.DateTimeField(default=datetime.now());
 
     def __str__(self):
         return self.title
+
+    class Meta():
+        ordering = ['-created_at']
