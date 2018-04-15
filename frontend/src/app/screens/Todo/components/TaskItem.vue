@@ -38,6 +38,14 @@
         @click="openForm()"
       />
     </v-list-tile-content>
+    <v-list-tile-action>
+      <v-btn
+        icon
+        @click="remove()"
+      >
+        <v-icon color="grey lighten-1">close</v-icon>
+      </v-btn>
+    </v-list-tile-action>
   </v-list-tile>
 </template>
 
@@ -77,7 +85,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions('task', ['createTask', 'updateTask', 'setEdit']),
+    ...mapActions('task', [
+      'createTask',
+      'updateTask',
+      'deleteTask',
+      'setEdit',
+    ]),
     setStatus(status) {
       this.updateTask({task_id: this.task.id, data: { status }});
     },
@@ -102,6 +115,12 @@ export default {
       }
       // Close form
       this.setEdit(null);
+    },
+    remove() {
+      if (this.editTask === this.task.id) {
+        this.setEdit(null);
+      }
+      this.deleteTask(this.task.id);
     },
     cancel() {
       this.title = this.task.title;
