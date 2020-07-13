@@ -11,3 +11,6 @@ It's simple TODO List built on **Django REST Framework** and **Vue.j**
 * Run Django `pipenv shell && python manage.py runserver`
 * Open frontend folder `cd path/to/app/front`
 * Load Vue dependecies and run dev script `npm i && npm run dev`
+
+## Run with docker (recomended)
+* `docker-compose up --build`
