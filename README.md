@@ -13,4 +13,5 @@ It's simple TODO List built on **Django REST Framework** and **Vue.j**
 * Load Vue dependecies and run dev script `npm i && npm run dev`
 
 ## Run with docker (recomended)
+* Create `.env` file. ( just run `cp example.env .env`)
 * `docker-compose up --build`
