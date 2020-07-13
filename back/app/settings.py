@@ -1,5 +1,5 @@
 """
-Django settings for my_schedule project.
+Django settings for app project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/2.0/topics/settings/
@@ -23,7 +23,7 @@ class Common(Configuration):
     DEBUG = values.BooleanValue(False)
 
     # Application directory
-    APP_DIR = os.getenv('APP_DIR', 'my_schedule').lower()
+    APP_DIR = os.getenv('APP_DIR', 'app').lower()
 
     ALLOWED_HOSTS = []
 

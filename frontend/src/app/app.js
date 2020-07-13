@@ -9,6 +9,7 @@ import { sync } from 'vuex-router-sync';
 import Root from './components/Root';
 import 'vuetify/dist/vuetify.min.css';
 import 'vue-toast/dist/vue-toast.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 sync(store, router);
 
