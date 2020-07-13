@@ -4,7 +4,7 @@ import sys
 
 if __name__ == '__main__':
     configuration = os.getenv('ENVIRONMENT', 'development').title()
-    APP_DIR = os.getenv('APP_DIR', 'my_schedule').lower()
+    APP_DIR = os.getenv('APP_DIR', 'app').lower()
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', APP_DIR + '.settings')
     os.environ.setdefault('DJANGO_CONFIGURATION', configuration)
 
